@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+void main() => runApp(BasicApp());
+
 class BasicApp extends StatefulWidget {
   @override
   _BasicAppState createState() => _BasicAppState();
@@ -8,7 +10,7 @@ class BasicApp extends StatefulWidget {
 class _BasicAppState extends State<BasicApp> {
   String text = 'Before click';
 
-  void _changeText(){
+  void _changeText() {
     setState(() {
       text = 'after clicked';
     });
@@ -16,17 +18,23 @@ class _BasicAppState extends State<BasicApp> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: <Widget>[
-          AppBar(
-            title: Title(
-              color: Colors.lightGreen,
-            ),
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Appbar title'),
+        ),
+        body: Container(
+          width: double.infinity,
+          child: Column(
+            children: <Widget>[
+              Text(text),
+              RaisedButton(
+                onPressed: _changeText,
+                child: Text('Press'),
+              ),
+            ],
           ),
-          Text('Text body'),
-          RaisedButton(onPressed: _changeText),
-        ],
+        ),
       ),
     );
   }
