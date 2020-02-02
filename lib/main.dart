@@ -1,20 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_assignment/text_output.dart';
+import 'package:flutter_assignment/text_control.dart';
 
 void main() => runApp(BasicApp());
 
-class BasicApp extends StatefulWidget {
-  @override
-  _BasicAppState createState() => _BasicAppState();
-}
-
-class _BasicAppState extends State<BasicApp> {
-  String text = 'Before click';
-
-  void _changeText() {
-    setState(() {
-      text = 'after clicked';
-    });
-  }
+class BasicApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
@@ -23,18 +13,7 @@ class _BasicAppState extends State<BasicApp> {
         appBar: AppBar(
           title: Text('Appbar title'),
         ),
-        body: Container(
-          width: double.infinity,
-          child: Column(
-            children: <Widget>[
-              Text(text),
-              RaisedButton(
-                onPressed: _changeText,
-                child: Text('Press'),
-              ),
-            ],
-          ),
-        ),
+        body: TextControl()
       ),
     );
   }
