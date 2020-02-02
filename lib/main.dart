@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_assignment/text_output.dart';
 import 'package:flutter_assignment/text_control.dart';
 
 void main() => runApp(BasicApp());
